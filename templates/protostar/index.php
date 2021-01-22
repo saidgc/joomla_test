@@ -147,6 +147,7 @@ else
 ?>">
 	<!-- Body -->
 	<div class="body" id="top">
+      esto es una prueba
 		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?>">
 			<!-- Header -->
 			<header class="header" role="banner">
