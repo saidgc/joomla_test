@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site">
+	<name>WS Accordion</name>
+	<author>WS-Theme.com</author>
+	<creationDate>06/2012</creationDate>
+	<copyright>Copyright (C) 2012. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>info@ws-theme.com</authorEmail>
+	<authorUrl>www.ws-theme.com</authorUrl>
+	<version>1.0.0</version>
+	<description>WS Accordion is a simple but powerful Joomla Accordion Module with a lot of options. It's build with jQuery and has lightweight code.</description>
+
+	<files>
+		<filename module="mod_wsaccordion">mod_wsaccordion.php</filename>
+		<filename module="mod_wsaccordion">mod_wsaccordion.xml</filename>
+		<filename>index.html</filename>
+		<folder>images</folder>
+		<folder>admin</folder>
+		<folder>js</folder>
+	</files>
+
+	<config>
+		<fields name="params">
+			
+	
+			<fieldset name="MAIN_SETTINGS" label="General Settings" addfieldpath="/modules/mod_wsaccordion/admin/elements">	
+				
+				<field name="liner2" type="wsheadline" label="General Options" style="ws-line" />
+				
+				<field name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="Display an additional Module Class Suffix, needed for some template specific features" />
+				
+				<field name="toggle" type="radio" class="btn-group" default="1" label="Toggle Items" description="If set to yes it is only allowed to open one item at a time, if clicked another one the previous will automaticly close. Set this option to off that all items can be opened without automaticly closing">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+     		
+				<field name="liner3" type="wsheadline" label="Layout Options" style="ws-line" />
+                		
+				<field name="accstyle" type="list" default="1" label="Accordion Style" description="Please choose your style for the whole accordion (we build three for you) or simply build your own with css (two possible ways: include the Styles into your Template CSS File or place it in the included Add CSS Section of this Module)">
+	  			<option value="1">Style 1</option>
+	  			<option value="2">Style 2</option>
+	  			<option value="3">Style 3 (Color Picker)</option>
+				</field>
+                		
+				<field name="arrow" type="list" default="down1" label="Arrow Style" description="Please choose a style for the close button, of course you can easily add your own, simply replace the image 'myown.png' under modules/mod_wsaccordion/images and select the option 'I want to use my own'">
+	  			<option value="down1">Style 1</option>
+	  			<option value="down2">Style 2</option>
+	  			<option value="down3">Style 3</option>
+	  			<option value="down4">Style 4</option>
+	  			<option value="down5">Style 5</option>
+	  			<option value="down6">Style 6</option>
+	  			<option value="down7">Style 7</option>
+	  			<option value="down8">Style 8</option>
+	  			<option value="down9">Style 9</option>
+	  			<option value="down10">Style 10</option>
+	  			<option value="myown">I want to use my own</option>
+				</field>
+				<field name="wsiframe_1" type="wsiframe" label="See all Styles" link="../modules/mod_wsaccordion/images/preview.html" sizex="1000" sizey="800" />
+				
+				<field name="elementheight" type="text" default="50" label="Element Height" description="Please type in the height of each accordion element, default is 50" />
+				<field name="wssubline_1" type="wssubline" label="The Unit is &lt;b&gt;px&lt;/b&gt;" />
+                		
+				<field name="fontsize" type="text" default="13" label="Font Size" class="ws-px" description="Please type in a font size for the main accordion elements" />
+				<field name="wssubline_2" type="wssubline" label="The Unit is &lt;b&gt;px&lt;/b&gt;" />
+				
+				<field name="responsivefontsize" type="text" default="13" label="Responsive Font Size" class="ws-px" description="Please choose a font size which is only activated when your site is less then 767px" />
+				<field name="wssubline_3" type="wssubline" label="The Unit is &lt;b&gt;px&lt;/b&gt;" />
+              		
+				<field name="arrowrotation" type="text" default="180" label="Arrow Rotation" class="ws-deg" description="Please type in degrees for the rotation of the close button, attention: it's of course linked with the time animation speed. We recommeneded to choose simple values like 45, 90, 135, 180, 225, 270, 315, 360 - to be continued" />
+				<field name="wssubline_4" type="wssubline" label="The Unit is &lt;b&gt;degree&lt;/b&gt;" />
+         
+        <field name="liner5" type="wsheadline" label="Color Options" style="ws-line" />        		
+				
+				<field name="txtcolor" type="color" default="#3A87AD" label="Text Color" description="Please choose a text color for the elements (attention: this only works when style 3 is active)" /> 
+				<field name="bgcolor" type="color" default="#D9EDF7" label="Background Color" description="Please choose a background color for the elements (attention: this only works when style 3 is active)" />
+				<field name="activecolor" type="color" default="#000000" label="Text Color Active" description="Please choose a text color for the element who is active" />
+
+        <field name="liner4" type="wsheadline" label="Animation Options" style="ws-line" />
+         
+        <field name="elementspeed" type="text" default="600" label="Element Animation Speed" description="Choose the time who's needed for the opening animation of the accordion element" />
+        <field name="wssubline_7" type="wssubline" label="The Unit is &lt;b&gt;ms&lt;/b&gt;" />
+        <field name="arrowani" type="text" default="200" label="Arrow Animation Speed" description="Please type in a value for the duration of the animation. It is used for slide-in-effect AND the rotation" />
+        <field name="wssubline_8" type="wssubline" label="The Unit is &lt;b&gt;ms&lt;/b&gt;" />
+                		
+				<field name="easing" type="list" default="easeInOutExpo" label="Animation Style" description="Choose the Animation effect of the accordion, listed is the whole jQuery Easing Catalog">
+	  			<option value="easeInQuad">easeInQuad</option>
+	  			<option value="easeOutQuad">easeOutQuad</option>
+	  			<option value="easeInOutQuad">easeInOutQuad</option>
+	  			<option value="easeInCubic">easeInCubic</option>
+	  			<option value="easeOutCubic">easeOutCubic</option>
+	  			<option value="easeInOutCubic">easeInOutCubic</option>
+	  			<option value="easeInQuart">easeInQuart</option>
+	  			<option value="easeOutQuart">easeOutQuart</option>
+	  			<option value="easeInOutQuart">easeInOutQuart</option>
+	  			<option value="easeInQuint">easeInQuint</option>
+	  			<option value="easeOutQuint">easeOutQuint</option>
+	  			<option value="easeInOutQuint">easeInOutQuint</option>
+	  			<option value="easeInSine">easeInSine</option>
+	  			<option value="easeOutSine">easeOutSine</option>
+	  			<option value="easeInOutSine">easeInOutSine</option>
+	  			<option value="easeInExpo">easeInExpo</option>
+	  			<option value="easeOutExpo">easeOutExpo</option>
+	  			<option value="easeInOutExpo">easeInOutExpo</option>
+	  			<option value="easeInCirc">easeInCirc</option>
+	  			<option value="easeOutCirc">easeOutCirc</option>
+	  			<option value="easeInOutCirc">easeInOutCirc</option>
+	  			<option value="easeInElastic">easeInElastic</option>
+	  			<option value="easeOutElastic">easeOutElastic</option>
+	  			<option value="easeInOutElastic">easeInOutElastic</option>
+	  			<option value="easeInBack">easeInBack</option>
+	  			<option value="easeOutBack">easeOutBack</option>
+	  			<option value="easeInOutBack">easeInOutBack</option>
+	  			<option value="easeInBounce">easeInBounce</option>
+	  			<option value="easeOutBounce">easeOutBounce</option>
+	  			<option value="easeInOutBounce">easeInOutBounce</option>
+	  			<option value="def">def</option>
+				</field>
+				
+				<field name="liner1" type="wsheadline" label="jQuery Options" style="ws-line" />
+				
+				<field name="jqueryload" type="list" default="3" label="jQuery Loading" description="This is a very important Option!!! If the Portfolio not works please try all entries, cause of the many different Themes and the different Variations of jQuery Loading we decided to give you the full control over the loading. Please note: we can't give support if the Script conflicts with another Script.">
+					<option value="1">Document - Scripts and jQuery</option>
+					<option value="2">Document - Scripts</option>
+					<option value="3">Head - Scripts and jQuery</option>
+					<option value="4">Head - Scripts and jQuery from Joomla (only 3.x) noConflict</option>
+					<option value="5">Head - Scripts and jQuery from Joomla (only 3.x)</option>
+					<option value="6">Head - Scripts in Head</option>		
+				</field>
+				
+				<field name="jqueryversion" type="text" default="1.8.3" label="jQuery Version" description="Choose the Version of jQuery which should be loaded. For default we use 1.8.3, this is the Standard for Twitter Bootstrap, this option has NO EFFECT if you decide to use the Bootstrap Framework from Joomla" />
+				
+				<field name="jqueryconflict" type="radio" class="btn-group" default="0" label="jQuery No Conflict" description="Did you want to load the jQuery Script in NO CONFLICT Mode?"><option value="1">Yes</option><option value="0">No</option></field>
+				<field name="wsline_1" type="wsline" />
+				
+				<field type="asset" path="/modules/mod_wsaccordion/admin/" />
+				
+			</fieldset>
+			
+			
+			<fieldset name="acc0" label="Item 1">
+				<field name="headl0" type="wsheadline" label="Item 1" />			
+				<field name="act0" type="radio" class="btn-group" default="1" label="Activated" description=""><option value="1">Yes</option><option value="0">No</option></field>
+				<field name="head0" type="text" label="Headline" default="Type in your Headline"  description="" />
+				<field name="wsline_000" type="wsline" />
+				<field name="con0" type="editor" label="Content" default=""  description="" filter="raw" buttons="true" />
+				<field name="wsline_0000" type="wsline" />
+			</fieldset>
+			
+			<fieldset name="acc1" label="Item 2">
+				<field name="headl1" type="wsheadline" label="Item 2" />		
+				<field name="act1" type="radio" class="btn-group" default="1" label="Activated" description=""><option value="1">Yes</option><option value="0">No</option></field>
+				<field name="head1" type="text" label="Headline" default="Type in your Headline"  description="" />
+				<field name="wsline_001" type="wsline" />
+				<field name="con1" type="editor" label="Content" default=""  description="" filter="raw" buttons="true" />
+				<field name="wsline_0001" type="wsline" />
+			</fieldset>
+			
+			<fieldset name="acc2" label="Item 3">
+				<field name="headl2" type="wsheadline" label="Item 3" />		
+				<field name="act2" type="radio" class="btn-group" default="1" label="Activated" description=""><option value="1">Yes</option><option value="0">No</option></field>
+				<field name="head2" type="text" label="Headline" default="Type in your Headline"  description="" />
+				<field name="wsline_002" type="wsline" />
+				<field name="con2" type="editor" label="Content" default=""  description="" filter="raw" buttons="true" />
+				<field name="wsline_0002" type="wsline" />
+			</fieldset>
+			
+			<fieldset name="acc3" label="Item 4">
+				<field name="headl3" type="wsheadline" label="Item 4" />		
+				<field name="act3" type="radio" class="btn-group" default="0" label="Activated" description=""><option value="1">Yes</option><option value="0">No</option></field>
+				<field name="head3" type="text" label="Headline" default="Type in your Headline"  description="" />
+				<field name="wsline_003" type="wsline" />
+				<field name="con3" type="editor" label="Content" default=""  description="" filter="raw" buttons="true" />
+				<field name="wsline_0003" type="wsline" />
+			</fieldset>
+			
+			<fieldset name="acc4" label="Item 5">
+				<field name="headl4" type="wsheadline" label="Item 5" />		
+				<field name="act4" type="radio" class="btn-group" default="0" label="Activated" description=""><option value="1">Yes</option><option value="0">No</option></field>
+				<field name="head4" type="text" label="Headline" default="Type in your Headline"  description="" />
+				<field name="wsline_004" type="wsline" />
+				<field name="con4" type="editor" label="Content" default=""  description="" filter="raw" buttons="true" />
+				<field name="wsline_0004" type="wsline" />
+			</fieldset>
+			
+			<fieldset name="acc5" label="Item 6">
+				<field name="headl5" type="wsheadline" label="Item 6" />		
+				<field name="act5" type="radio" class="btn-group" default="0" label="Activated" description=""><option value="1">Yes</option><option value="0">No</option></field>
+				<field name="head5" type="text" label="Headline" default="Type in your Headline"  description="" />
+				<field name="wsline_005" type="wsline" />
+				<field name="con5" type="editor" label="Content" default=""  description="" filter="raw" buttons="true" />
+				<field name="wsline_0005" type="wsline" />
+			</fieldset>
+			
+			<fieldset name="acc6" label="Item 7">
+				<field name="headl6" type="wsheadline" label="Item 7" />		
+				<field name="act6" type="radio" class="btn-group" default="0" label="Activated" description=""><option value="1">Yes</option><option value="0">No</option></field>
+				<field name="head6" type="text" label="Headline" default="Type in your Headline"  description="" />
+				<field name="wsline_006" type="wsline" />
+				<field name="con6" type="editor" label="Content" default=""  description="" filter="raw" buttons="true" />
+				<field name="wsline_0006" type="wsline" />
+			</fieldset>
+			
+			<fieldset name="acc7" label="Item 8">
+				<field name="headl7" type="wsheadline" label="Item 8" />		
+				<field name="act7" type="radio" class="btn-group" default="0" label="Activated" description=""><option value="1">Yes</option><option value="0">No</option></field>
+				<field name="head7" type="text" label="Headline" default="Type in your Headline"  description="" />
+				<field name="wsline_007" type="wsline" />
+				<field name="con7" type="editor" label="Content" default=""  description="" filter="raw" buttons="true" />
+				<field name="wsline_0007" type="wsline" />
+			</fieldset>
+			
+			<fieldset name="acc8" label="Item 9">
+				<field name="headl8" type="wsheadline" label="Item 9" />		
+				<field name="act8" type="radio" class="btn-group" default="0" label="Activated" description=""><option value="1">Yes</option><option value="0">No</option></field>
+				<field name="head8" type="text" label="Headline" default="Type in your Headline"  description="" />
+				<field name="wsline_008" type="wsline" />
+				<field name="con8" type="editor" label="Content" default=""  description="" filter="raw" buttons="true" />
+				<field name="wsline_0008" type="wsline" />
+			</fieldset>
+			
+			<fieldset name="acc9" label="Item 10">
+				<field name="headl9" type="wsheadline" label="Item 10" />		
+				<field name="act9" type="radio" class="btn-group" default="0" label="Activated" description=""><option value="1">Yes</option><option value="0">No</option></field>
+				<field name="head9" type="text" label="Headline" default="Type in your Headline"  description="" />
+				<field name="wsline_009" type="wsline" />
+				<field name="con9" type="editor" label="Content" default=""  description="" filter="raw" buttons="true" />
+				<field name="wsline_0009" type="wsline" />
+			</fieldset>
+			
+			<fieldset name="acc10" label="Item 11">
+				<field name="headl10" type="wsheadline" label="Item 11" />		
+				<field name="act10" type="radio" class="btn-group" default="0" label="Activated" description=""><option value="1">Yes</option><option value="0">No</option></field>
+				<field name="head10" type="text" label="Headline" default="Type in your Headline"  description="" />
+				<field name="wsline_0010" type="wsline" />
+				<field name="con10" type="editor" label="Content" default=""  description="" filter="raw" buttons="true" />
+				<field name="wsline_00010" type="wsline" />
+			</fieldset>
+			
+			<fieldset name="acc11" label="Item 12">
+				<field name="headl11" type="wsheadline" label="Item 12" />		
+				<field name="act11" type="radio" class="btn-group" default="0" label="Activated" description=""><option value="1">Yes</option><option value="0">No</option></field>
+				<field name="head11" type="text" label="Headline" default="Type in your Headline"  description="" />
+				<field name="wsline_0011" type="wsline" />
+				<field name="con11" type="editor" label="Content" default=""  description="" filter="raw" buttons="true" />
+				<field name="wsline_00011" type="wsline" />
+			</fieldset>
+			
+			<fieldset name="acc12" label="Item 13">
+				<field name="headl12" type="wsheadline" label="Item 13" />		
+				<field name="act12" type="radio" class="btn-group" default="0" label="Activated" description=""><option value="1">Yes</option><option value="0">No</option></field>
+				<field name="head12" type="text" label="Headline" default="Type in your Headline"  description="" />
+				<field name="wsline_0012" type="wsline" />
+				<field name="con12" type="editor" label="Content" default=""  description="" filter="raw" buttons="true" />
+				<field name="wsline_00012" type="wsline" />
+			</fieldset>
+			
+			<fieldset name="acc13" label="Item 14">
+				<field name="headl13" type="wsheadline" label="Item 14" />		
+				<field name="act13" type="radio" class="btn-group" default="0" label="Activated" description=""><option value="1">Yes</option><option value="0">No</option></field>
+				<field name="head13" type="text" label="Headline" default="Type in your Headline"  description="" />
+				<field name="wsline_0013" type="wsline" />
+				<field name="con13" type="editor" label="Content" default=""  description="" filter="raw" buttons="true" />
+				<field name="wsline_00013" type="wsline" />
+			</fieldset>
+			
+			<fieldset name="acc14" label="Item 15">
+				<field name="headl14" type="wsheadline" label="Item 15" />		
+				<field name="act14" type="radio" class="btn-group" default="0" label="Activated" description=""><option value="1">Yes</option><option value="0">No</option></field>
+				<field name="head14" type="text" label="Headline" default="Type in your Headline"  description="" />
+				<field name="wsline_0014" type="wsline" />
+				<field name="con14" type="editor" label="Content" default=""  description="" filter="raw" buttons="true" />
+				<field name="wsline_00014" type="wsline" />
+			</fieldset>
+			
+			<fieldset name="acc15" label="Item 16">
+				<field name="headl15" type="wsheadline" label="Item 16" />		
+				<field name="act15" type="radio" class="btn-group" default="0" label="Activated" description=""><option value="1">Yes</option><option value="0">No</option></field>
+				<field name="head15" type="text" label="Headline" default="Type in your Headline"  description="" />
+				<field name="wsline_0015" type="wsline" />
+				<field name="con15" type="editor" label="Content" default=""  description="" filter="raw" buttons="true" />
+				<field name="wsline_00015" type="wsline" />
+			</fieldset>
+			
+			<fieldset name="acc16" label="Item 17">
+				<field name="headl16" type="wsheadline" label="Item 17" />		
+				<field name="act16" type="radio" class="btn-group" default="0" label="Activated" description=""><option value="1">Yes</option><option value="0">No</option></field>
+				<field name="head16" type="text" label="Headline" default="Type in your Headline"  description="" />
+				<field name="wsline_0016" type="wsline" />
+				<field name="con16" type="editor" label="Content" default=""  description="" filter="raw" buttons="true" />
+				<field name="wsline_00016" type="wsline" />
+			</fieldset>
+			
+			<fieldset name="acc17" label="Item 18">
+				<field name="headl17" type="wsheadline" label="Item 18" />		
+				<field name="act17" type="radio" class="btn-group" default="0" label="Activated" description=""><option value="1">Yes</option><option value="0">No</option></field>
+				<field name="head17" type="text" label="Headline" default="Type in your Headline"  description="" />
+				<field name="wsline_0017" type="wsline" />
+				<field name="con17" type="editor" label="Content" default=""  description="" filter="raw" buttons="true" />
+				<field name="wsline_00017" type="wsline" />
+			</fieldset>
+			
+			<fieldset name="acc18" label="Item 19">
+				<field name="headl18" type="wsheadline" label="Item 19" />		
+				<field name="act18" type="radio" class="btn-group" default="0" label="Activated" description=""><option value="1">Yes</option><option value="0">No</option></field>
+				<field name="head18" type="text" label="Headline" default="Type in your Headline"  description="" />
+				<field name="wsline_0018" type="wsline" />
+				<field name="con18" type="editor" label="Content" default=""  description="" filter="raw" buttons="true" />
+				<field name="wsline_00018" type="wsline" />
+			</fieldset>
+			
+			<fieldset name="acc19" label="Item 20">
+				<field name="headl19" type="wsheadline" label="Item 20" />		
+				<field name="act19" type="radio" class="btn-group" default="0" label="Activated" description=""><option value="1">Yes</option><option value="0">No</option></field>
+				<field name="head19" type="text" label="Headline" default="Type in your Headline"  description="" />
+				<field name="wsline_0019" type="wsline" />
+				<field name="con19" type="editor" label="Content" default=""  description="" filter="raw" buttons="true" />
+				<field name="wsline_00019" type="wsline" />
+			</fieldset>
+			
+			<fieldset name="addcsslabel" label="CSS">
+				<field name="addcsshead" type="wsheadline" label="Add your own CSS" />
+				<field name="addcssdesc" type="wstext" label="If needed, include here your own CSS, all inserted Text is allready placed in a 'style' Tag, so simply begin to Code" style="ws-text" />
+				<field name="wsline_addcss" type="wsline" />
+				<field name="addcss" type="editor" editor="none" label="Add your own CSS" default=""  description="" filter="raw" />
+				<field name="wsline_addcss2" type="wsline" />
+			</fieldset>
+			
+			<fieldset name="documentation_tab" label="FAQ">
+				
+				<field name="faq0" type="wsheadline" label="FAQ" />
+				
+				<field name="faq1" type="wsfaq" question="How to include this Module in a Moduleposition?" answer="That is really simple! Activate this Module, assign it to all Pages and use as Module Position provided by your Theme. Save and ready." />
+				
+				<field name="faq2" type="wsfaq" question="How to include this Module in my Content?" answer="To insert this module inside an article, use the &lt;b&gt;{loadposition xxx}&lt;/b&gt; Shortcode command, as follows:&lt;br /&gt;&lt;br /&gt;- Set its Module position to any value that does not conflict with an existing template position. You can type in the position value instead of selecting it from the drop-down list. For example, use the position myposition.&lt;br /&gt;- Assign the module to the Menu Items that contain the articles that you want the module to show in. You can also just assign the module to all Menu Items. Please do not forget to set the Status to published.&lt;br /&gt;- Edit the articles where you want this module to appear and insert the text {loadposition myposition} in the article at the place where you want the module." />
+				
+				<field name="documentation1" type="wsheadline" label="Support" />
+				<field name="documentation2" type="wstext" label="Please look at our Website to see the Documentation, there you will also find our FAQ's and our Ticket System. We will always do our best to provide you with a fast and high quality support.&lt;br /&gt;&lt;br /&gt;&lt;a href='http://www.ws-theme.com/support' target='_blank' class='btn btn-danger'&gt;Our Support Center&lt;/a&gt;" style="ws-text" />
+				<field name="documentation3" type="wsline" />
+				
+			</fieldset>
+			
+
+
+		</fields>
+	</config>
+
+</extension>

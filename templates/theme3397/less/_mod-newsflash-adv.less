@@ -1,0 +1,202 @@
+@import "_variables.less";
+@import "bootstrap/_mixins.less";
+// ============================
+// NewsFlash Advanced Modules
+// ============================
+.mod-newsflash-adv {
+    &.counters {
+        text-align: left;
+        .counter {
+            font: 700 34px/42px @font-family-alt;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: @headings-color;
+            position: relative;
+            &:before {
+                content: "";
+                width: 34px;
+                height: 3px;
+                display: block;
+                background: @headings-color;
+                position: relative;
+                margin-bottom: 22px;
+            }
+        }
+        .introtext {
+            font: 400 14px/29px @font-family-alt;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: @text-color;
+        }
+    }
+    &.mod-newsflash-adv__pricing_simple {
+        .item {
+            .item_content {
+                text-align: center;
+                padding: 30px 20px;
+                border: 1px solid @global-color;
+                ul {
+                    padding: 10px 0;
+                    li {
+                        font-size: 24px;
+                        line-height: 26px;
+                        &:before {
+                            display: none;
+                        }
+                        & + li {
+                            margin-top: 0;
+                        }
+                    }
+                }
+                .item_title {
+                    color: @global-color;
+                    margin-bottom: 0;
+                    text-transform: uppercase;
+                }
+            }
+            &.featured {
+                .item_content {
+                    background: #374046;
+                    .btn {
+                        &:hover {
+                            background: @global-color;
+                        }
+                    }
+                }
+            }
+        }
+        .price {
+            font-size: 40px;
+            line-height: 50px;
+            padding: @font-size-base 0;
+            span {
+                font-size: 16px;
+                line-height: 41px;
+                vertical-align: bottom;
+            }
+        }
+    }
+    &.mod-newsflash-adv__pricing_detailed {
+        .item {
+            position: relative;
+            .item_title {
+                color: @global-color;
+                margin-bottom: 11px;
+                text-transform: uppercase;
+            }
+            .price {
+                border-top: 1px solid @table-border-color;
+                border-bottom: 1px solid @table-border-color;
+                font-size: 40px;
+                line-height: 50px;
+                padding: @font-size-base 0;
+                span {
+                    font-size: 16px;
+                    line-height: 38px;
+                    vertical-align: bottom;
+                }
+            }
+            .item_content {
+                text-align: center;
+                padding: 30px 20px;
+                border: 1px solid @global-color;
+                ul {
+                    padding: 18px 0 11px;
+                    li {
+                        font-size: 16px;
+                        line-height: 30px;
+                        &:before {
+                            display: none;
+                        }
+                        & + li {
+                            margin-top: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.mod-newsflash-adv__progbars_horizontal {
+        text-align: center;
+    }
+    &.mod-newsflash-adv__progbars_circle {
+        text-align: center;
+        @media(min-width: 480px) and (max-width: 767px) {
+            .item__module {
+                width: 50%;
+                float: left;
+            }
+        }
+    }
+    &.mod-newsflash-adv__national_economy {
+        .item {
+            padding-right: 60px;
+            padding-top: 35px;
+        }
+    }
+    &.mod-newsflash-adv__we_offer {
+        .item {
+            padding-top: 50px;
+            .item_title {
+                .item_title_part_0 {
+                    display: block;
+                }
+            }
+            .item_content {
+                i {
+                    font-size: 80px;
+                    line-height: 80px;
+                    display: block;
+                    padding-bottom: 45px;
+                }
+                .item_introtext {
+                    padding-right: 70px;
+                }
+            }
+        }
+    }
+    &.mod-newsflash-adv__team_home {
+        .row {
+            margin: 0;
+            .item {
+                padding: 0;
+                padding-top: 35px;
+                .item_content {
+                    .item_img {
+                        margin-bottom: 45px;
+                    }
+                    .item_title {
+                        margin-bottom: 10px;
+                    }
+                    h6 {
+                        margin-bottom: 35px;
+                    }
+                    p {
+                        max-width: 310px;
+                        padding-bottom: 40px;
+                    }
+
+                    &:after{
+                        content:"";
+                        width: 30px;
+                        height: 3px;
+                        background: @white;
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+
+    &.mod-newsflash-adv__about_testimonials{
+        .item{
+            padding-top: 30px;
+            .item_content{
+                padding-right: 40px;
+            }
+        }
+    }
+    .mod-newsflash-adv_custom-link {
+        margin-bottom: @line-height-base*2;
+    }
+}

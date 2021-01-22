@@ -1,0 +1,75 @@
+@import "_variables.less";
+@import "bootstrap/_mixins.less";
+.moduletable {
+    .clearfix;
+    &.col-sm-12 + .moduletable {
+        clear: both;
+    }
+    &.col-sm-12:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.moduletable.col-sm-12 + * {
+    margin-top: 0;
+}
+
+.moduletable.col-sm-12.title_only + * {
+    margin-top: 0;
+}
+
+.moduletable.olark {
+    display: none;
+}
+
+// =======================
+// Module
+// =======================
+.moduletable {
+    &.top_phone {
+        text-align: right;
+        .moduleTitle {
+            margin-bottom: 0;
+        }
+        .mod-custom {
+            p {
+                font: 400 12px/20px @font-family-base;
+                text-transform: uppercase;
+                letter-spacing: 0.02em;
+                color: @text-color;
+                padding-bottom: 0;
+            }
+        }
+    }
+
+    &.copyright_menu{
+      padding-top: 20px;
+
+      .menu {
+        li{
+          display: inline-block;
+          margin-right: 30px;
+          a{
+            font: 400 14px/20px @font-family-alt;
+            text-transform:uppercase;
+            letter-spacing: 0.06em;
+            color: @text-color; 
+            &:hover{
+              color: @headings-color; 
+            }
+          }
+          &.active{
+            a{
+              color: @headings-color; 
+            }
+          }
+        }
+      }
+    }
+
+    // &.national_economy{
+    //   .page_header{
+    //     max-width: 630px;
+    //   }
+    // }
+}
